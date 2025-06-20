@@ -35,3 +35,15 @@ You can now run Go code directly:
 $ go run main.go
 hello, world
 ```
+
+## Running Commands inside Containers
+
+Containerized commands can be run without entering containers.
+For example, running tests can be done like so:
+```bash
+# Pass commands to 'toolbox run':
+toolbox run -c toolbx-golang -- go test -v
+
+# Or use the Makefile:
+make test
+```
