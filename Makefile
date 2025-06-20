@@ -1,6 +1,8 @@
 .PHONY: container
 container:
 	toolbox create toolbx-golang --distro ubuntu --release 24.04 || :
+
+.PHONY: shell
 	toolbox enter toolbx-golang
 
 .PHONY: test
