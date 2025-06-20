@@ -23,9 +23,8 @@ make container
 
 Once inside, configure the container to run Go programs:
 ```bash
-# Install Go and Vim:
-sudo apt update && sudo apt install -y golang vim
-export EDITOR=vim
+# Install Go:
+sudo apt update && sudo apt install -y golang
 
 # Or use the setup script:
 ./setup.sh
