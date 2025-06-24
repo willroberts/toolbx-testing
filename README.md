@@ -1,6 +1,6 @@
 # Toolbx Testing
 
-This repo contains some minimal examples of launching Go containers with
+This repo contains a minimal example of launching Go containers with
 [Toolbx](https://containertoolbx.org/). Toolbx leverages Podman and OCI to
 launch lightweight containers on Linux systems.
 
