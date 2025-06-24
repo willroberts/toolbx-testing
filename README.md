@@ -1,43 +1,32 @@
 # Toolbx Testing
 
-This repo contains some minimal examples of launching containers with
+This repo contains some minimal examples of launching Go containers with
 [Toolbx](https://containertoolbx.org/). Toolbx leverages Podman and OCI to
 launch lightweight containers on Linux systems.
 
 This is useful for creating development environments on immutable Linux systems,
 such as Fedora Silverblue or Bazzite.
 
-## Creating Containers
+## Makefile Commands
 
-Containers can be created from the host environment:
-```bash
-toolbox create toolbx-golang --distro ubuntu --release 24.04
+There are some preconfigured `make` commands for interacting with Toolbox:
+```
+make setup  # create (or recreate) a golang container on ubuntu 24.04
+make build  # compile the go application
+make run    # run the go application
+make test   # run unit tests
 ```
 
-## Starting a Shell
+## Toolbox Commands
 
-Use the 'toolbox enter' command to start an interactive session:
+You can also interact with Toolbox directly:
 ```bash
-toolbox enter toolbx-golang
-```
+# Create a container
+toolbox create <name> --distro ubuntu --release 24.04
 
-## Configuring the Container
+# Start an interactive shell in the container
+toolbox enter <name>
 
-Once inside, configure the container to run Go programs:
-```bash
-sudo apt update && sudo apt install -y golang
-```
-
-You can now run Go code directly:
-```bash
-$ go run main.go
-hello, world
-```
-
-## Running Commands inside Containers
-
-Containerized commands can be run without entering containers.
-For example, running tests can be done like so:
-```bash
-toolbox run -c toolbx-golang -- go test -v
+# Run a command inside the container
+toolbox run -c <name> -- <command>
 ```

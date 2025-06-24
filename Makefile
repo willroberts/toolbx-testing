@@ -1,7 +1,7 @@
-.PHONY: container
-container:
+.PHONY: setup
+setup:
 	toolbox create toolbx-golang --distro ubuntu --release 24.04 || :
-	toolbox run -c toolbx-golang -- ./setup.sh
+	toolbox run -c toolbx-golang -- sudo apt update && sudo apt install -y golang
 
 .PHONY: build
 build:
