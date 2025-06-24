@@ -24,6 +24,9 @@ You can also interact with Toolbox directly:
 # Create a container
 toolbox create <name> --distro ubuntu --release 24.04
 
+# Delete a container
+toolbox rm -f <name>
+
 # Start an interactive shell in the container
 toolbox enter <name>
 
