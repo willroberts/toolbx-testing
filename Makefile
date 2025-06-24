@@ -1,20 +1,20 @@
 .PHONY: setup
 setup:
-	toolbox rm -f toolbx-golang
-	toolbox create toolbx-golang --distro ubuntu --release 24.04 || :
-	toolbox run -c toolbx-golang -- sudo apt update
-	toolbox run -c toolbx-golang -- sudo apt install -y golang
+	toolbox rm -f toolbx-go
+	toolbox create toolbx-go --distro ubuntu --release 24.04 || :
+	toolbox run -c toolbx-go -- sudo apt update
+	toolbox run -c toolbx-go -- sudo apt install -y golang
 
 .PHONY: build
 build:
 	rm -rf build
 	mkdir -p build
-	toolbox run -c toolbx-golang -- go build -o build/main main.go
+	toolbox run -c toolbx-go -- go build -o build/main main.go
 
 .PHONY: run
 run:
-	toolbox run -c toolbx-golang -- go run main.go
+	toolbox run -c toolbx-go -- go run main.go
 
 .PHONY: test
 test:
-	toolbox run -c toolbx-golang -- go test -v ./...
+	toolbox run -c toolbx-go -- go test -v ./...

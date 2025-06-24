@@ -11,7 +11,7 @@ such as Fedora Silverblue or Bazzite.
 
 There are some preconfigured `make` commands for interacting with Toolbox:
 ```bash
-make setup  # create (or recreate) a golang container on ubuntu 24.04
+make setup  # create (or recreate) a Go container on ubuntu 24.04
 make build  # compile the go application
 make run    # run the go application
 make test   # run unit tests
