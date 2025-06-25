@@ -2,9 +2,8 @@
 setup:
 	toolbox rm -f toolbx-node 2>/dev/null
 	toolbox create toolbx-node --distro ubuntu --release 24.04 || :
-	toolbox run -c toolbx-node -- wget https://get.volta.sh -O /tmp/volta.sh
-	toolbox run -c toolbx-node -- bash /tmp/volta.sh
-	toolbox run -c toolbx-node -- volta install node@24
+	toolbox run -c toolbx-node -- sudo apt update
+	toolbox run -c toolbx-node -- sudo apt install -y nodejs
 
 .PHONY: run
 run:
