@@ -1,19 +1,21 @@
 # Toolbx Testing
 
-This repo contains a minimal example of launching Go containers with
+This repo contains a minimal example of launching containers with
 [Toolbx](https://containertoolbx.org/). Toolbx leverages Podman and OCI to
 launch lightweight containers on Linux systems.
 
 This is useful for creating development environments on immutable Linux systems,
 such as Fedora Silverblue or Bazzite.
 
+Contains examples for Go, Node.js, and Python.
+
 ## Makefile Commands
 
 There are some preconfigured `make` commands for interacting with Toolbox:
 ```bash
-make setup  # create (or recreate) a Go container on ubuntu 24.04
-make build  # compile the Go application
-make run    # run the Go application
+make setup  # create (or recreate) a container
+make build  # compile an application (for Go only)
+make run    # run an application
 make test   # run unit tests
 ```
 
